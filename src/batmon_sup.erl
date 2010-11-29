@@ -10,6 +10,6 @@ start_link() ->
 
 init(_Args) ->
     {ok, {{one_for_one, 1, 60},
-          [{ch3, {ch3, start_link, []},
-            permanent, brutal_kill, worker, [ch3]}]}}.
+          [{batmon_server, {batmon_server, start_link, []},
+            permanent, brutal_kill, worker, [batmon_server]}]}}.
 
